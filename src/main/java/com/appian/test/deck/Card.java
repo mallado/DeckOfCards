@@ -84,25 +84,20 @@ public record Card(int rank, Suit suit) implements Serializable {
 	@Override
 	public String toString() {
 		String rankString = null;
-		String suitString = null;
 		String colorString = null;
 
 		// The card suit icon and color are assigned
 		switch (suit) {
 		case SPADES:
-			suitString = "\u2660";
 			colorString = "Black";
 			break;
 		case HEARTS:
-			suitString = "\u2665";
 			colorString = "Red";
 			break;
 		case DIAMONDS:
-			suitString = "\u2666";
 			colorString = "Red";
 			break;
 		case CLUBS:
-			suitString = "\u2663";
 			colorString = "Black";
 			break;
 		}
@@ -126,6 +121,6 @@ public record Card(int rank, Suit suit) implements Serializable {
 		}
 
 		// The output is formatted
-		return String.format("[%s %s] - %s", rankString, suitString, colorString);
+		return String.format("[%s of %s] - %s", rankString, suit, colorString);
 	}
 }
